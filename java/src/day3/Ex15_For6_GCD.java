@@ -22,14 +22,14 @@ public class Ex15_For6_GCD {
 
 		int num1 = 12, num2 = 18;
 		int gcd = 1;
-		int i = 1;
-		for (i = 1; i <= num1; i++) {
+		for (int i = 1; i <= num1; i++) {
 			if (num1 % i == 0 && num2 % i == 0) {
 				gcd = i;
 			}
-			System.out.println(gcd);
-
 		}
-
+		System.out.println(gcd);
+	
 	}
 }
+
+
