@@ -17,5 +17,10 @@ class RemoteController{
 	 * 채널 switching
 	 * 
 	 */
-boolean on; //off 기능
+
+String name;
+boolean power; //on/off 기능
+int channel;
+int sound;
+
 }
