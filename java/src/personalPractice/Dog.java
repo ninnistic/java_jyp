@@ -1,5 +1,6 @@
 package personalPractice;
 public class Dog
+
 {
     // Instance Variables
     String name;
