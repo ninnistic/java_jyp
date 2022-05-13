@@ -1,5 +1,7 @@
 package day14;
 
+import java.util.Scanner;
+
 //가계부
 public class AccountBook {
 	// 내역의 최대 개수 
@@ -25,8 +27,8 @@ public class AccountBook {
 		}
 		for (int i = 0; i < count; i++) {
 			System.out.println(i+1+". "+items[i]); // 여기에서 items[i]는 items[i].toString()로 호출
-		}
 		
+		}
 	}
 	/* 기능 : 가계부에 새 내역을 추가하여 추가됐는지를 알려주는 메소드
 	 * 			새 내역(Item)이 주어지면, items에 추가하여 추가됐는지를 알려주는 메소드.
@@ -88,4 +90,19 @@ public class AccountBook {
 		}
 		return items[index].clone();
 	}
+	public void readItems(String type, String date) {
+		switch(type) {
+		case "date" : 
+			for( int i = 0; i < count; i ++) {
+				if(items[i].getDate().equals(date)) {
+					System.out.println(i+1+". "+items[i]);
+				}
+			}
+			break;
+		}
+		
+	}
+	
+
 }
+
