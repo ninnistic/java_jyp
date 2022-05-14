@@ -53,7 +53,7 @@ public class BaseballGame implements ConsoleProgram {
 		int menu;
 		do {
 			menu = selectMenu(scan);
-			excute(menu);
+			execute(menu);
 		} while (menu != exitMenu);
 		System.out.println("게임을 종료합니다.");
 		System.out.println("-------------");
