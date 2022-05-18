@@ -4,18 +4,21 @@ import java.util.Scanner;
 
 public class AccountBookManager implements ConsoleProgram {
 
-	private Scanner scan;
-	private AccountBook accbook; // 가계부
+	private Scanner scan;						// AccountBookManager에서 AccountBook과 Scanner를 멤버로 가져온 이유..?
+	private AccountBook accbook;       // 이것도 상관 없음 										// 
 	private final int exitMenu = 5; //종료 메뉴 번호
 
-	public AccountBookManager(Scanner scan) {
-
-		this.scan = scan;
-		accbook = new AccountBook();
+	public AccountBookManager(Scanner scan) { // 생성자의 매개변수로 Scanner scan이 들어감. 생성자는 객체가 생성될때 최초로 실행되는 메소드. 
+	
+		this.scan = scan; 
+		accbook = new AccountBook(); // 매개변수에서 넘겨준 값으로 할 때는 위에 초기화를 하면 안된다.  
+											// 객체멤버의 초기화의 마지막은 생성자다!! (생성자 블록에서 초기화)
 		// 샘플 데이터(테스트용)
 		Item item = new Item("2022-05-13", false, "신용카드", "점심", 7000);
 		accbook.insertItem(item);
 	}
+	
+	// ---------------------------------------------인터페이스 추상 메소드 재정의----
 
 	@Override
 	public int selectMenu(Scanner scan) {
@@ -85,8 +88,11 @@ public class AccountBookManager implements ConsoleProgram {
 		System.out.println("====================");
 
 	}
-
-	public void readAccountBook() {
+	
+	// ---------------------------------------------인터페이스 추상 메소드 재정의----
+	
+	// ---------------------------------------------AccountBookManager의 자체 메소드 ----
+	public void readAccountBook() {                    		// 가계부 읽는 method
 		System.out.print("전체(1) / 날짜(2) 선택 :  ");
 		int subMenu = scan.nextInt();
 		switch(subMenu) {
@@ -102,7 +108,7 @@ public class AccountBookManager implements ConsoleProgram {
 		System.out.println("======================");
 	}
 
-	public boolean insertAccountBook() {
+	public boolean insertAccountBook() {		//가계부에 내역 추가하는 method
 		System.out.print("날짜 : ");
 		String date = scan.next();
 		System.out.print("수입(true)/ 지출(false) :  ");
@@ -117,7 +123,7 @@ public class AccountBookManager implements ConsoleProgram {
 		return accbook.insertItem(item);
 	}
 
-	public boolean modifyAccountBook() {
+	public boolean modifyAccountBook() {		// 가계부 수정하는method
 		accbook.readItems();
 		System.out.println("수정할 항목(정수) :  ");
 		int modIndex = scan.nextInt();
