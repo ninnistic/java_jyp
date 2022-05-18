@@ -16,9 +16,18 @@ public class Ex06_Generic_Test1 {
 
 
 class Array<T>{
-	private T arr[] = (T[])new Object[10];
-	private int size = 0; // 현재 저장된 값의 개수
-	private int capacity = 10;// 배열의 최대 크기
+	private T arr[];
+	private int size; // 현재 저장된 값의 개수
+	private int capacity;// 배열의 최대 크기
+
+	public Array() {
+		this(10);
+	}
+	public Array(int capacity) {
+		this.capacity = capacity;
+		arr = (T[]) new Object[capacity];
+	}
+
 
 	public void print() {
 		for(int i = 0; i < size; i++) {
