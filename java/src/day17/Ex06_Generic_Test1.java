@@ -15,7 +15,7 @@ public class Ex06_Generic_Test1 {
 	}
 
 
-class Array<T>{
+class Array<T > { /*extends Number*/ // 이 코드를 추가하면 number클ㄹ래스 또는 상속받은 클래스들만 올 수 있다.>{
 	private T arr[];
 	private int size; // 현재 저장된 값의 개수
 	private int capacity;// 배열의 최대 크기
@@ -50,6 +50,13 @@ class Array<T>{
 		for (int i = 0; i <count; i++) {
 			this.arr[i] = arr[i];
 		}
-		
+	}
+	/* ?(와일드 카드) : Generic 클래스에서 메소드에 generic클래스의 객체가 오는데, 
+	 * Generic 타입이 서로 다른 경우, Method에서 호출할 수 있게 해준다.
+	 * 위 예제에서 Integer 타입으로 된 array가 string 타입으로 된 array2를 
+	 * 매개변수로 가져와서 print를 실행한다. => 와일드카드 때문에 가능하다.
+	 */
+	public void print(Array<?> array) {
+		array.print();
 	}
 }
