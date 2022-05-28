@@ -49,7 +49,7 @@ public class Ex01_UpDownGame {
 
 			if (menu == 1) {
 				while (true) {
-					System.out.print(" Insert One random number between 1 ~ 100 : ");
+					System.out.print(" Insert ONE random number between 1 ~ 100 : ");
 					user = scan.nextInt();
 					count++;
 					if (user > r) {
