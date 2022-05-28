@@ -1,15 +1,19 @@
 package day14;
 
+import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 public class BaseballGame implements ConsoleProgram {
 
 	private Scanner scan;
 	private final int exitMenu = 3;
-	private int com[] = new int[3];
-	private int user[] = new int[3];
-	private int record[] = new int[10]; // 기록 
-	private int recordCount = 0; // 기록에 등록된 개수 
+	private List<Integer> com = new ArrayList<Integer>();
+	private List<Integer> user = new ArrayList<Integer>();
+	private List<Integer> records = new ArrayList<Integer>();
+
 	private int min = 1;
 	private int max = 9; // 숫자 야구 게임의 최소값과 최대값 
 
@@ -33,11 +37,27 @@ public class BaseballGame implements ConsoleProgram {
 		case 1:
 			//컴퓨터 랜덤수 생성
 			createComRandom();
-			//사용자 숫자 입력
-			//strike, ball, out 판별
-			//기록 
+			System.out.println();
+			int count = 0;
+			while (true) {
+				user.clear();
+
+				//숫자를 3개 입력
+				inputNumbers(3);
+
+				//스트라이크, 볼 개수 확인
+				
+
+				count++;
+				// 스트라이크, 볼 결과를 출력후, 게임 종료 여부를 알려준다.
+				if (printResult()) {
+					break;
+				}
+			}
+			record(count, 5);
 			break;
 		case 2:
+			printRecord();
 			break;
 		case 3:
 			break;
@@ -59,47 +79,123 @@ public class BaseballGame implements ConsoleProgram {
 		System.out.println("-------------");
 
 	}
-	
+
 	public void createComRandom() {
-		int count = 0;
-		while(count < com.length) {
+		com.clear(); //  이전 play에서 사용한 숫자들을 지워줘야함. 
+		while (com.size() < 3) {
 			//랜덤 수 생성
-			int r = random(min,max);
-			
+			int r = random(min, max);
+
 			//중복 체크 -> 중복이 아니면 저장
-			if(indexOf(com,count,r) == -1) {
-				com[count++] = r;
+			if (com.indexOf(r) == -1) {
+				com.add(r);
 				System.out.println(r + " ");
 			}
-			//count를 증가
 		}
-		}
+	}
+
 	public static int random(int min, int max) {
-		if(min > max) {
+		if (min > max) {
 			int tmp = min;
 			min = max;
 			max = tmp;
 		}
-		return (int)(Math.random()*(max-min+1)+min); 
+		return (int) (Math.random() * (max - min + 1) + min);
 	}
-	
-	public static int indexOf(int arr[], int size, int num) { // 배열에 내가 원하는 값을 찾아서 있으면 1을 없으면 -1을 리턴하는게 indexOf
-		if(size == 0) {
-			return -1;
-		}
-		if(arr.length < size) {
-			size = arr.length;
-		}
-		for(int i = 0; i < size; i++) {
-			if(arr[i] == num) {
-				return i;
-			}
-		}
-		return -1;
-	}
-	
+
 	public BaseballGame(Scanner scan) {
 		this.scan = scan;
 	}
 
+	public void inputNumbers(int count) { // 숫자 입력하는 메소드 
+
+		String str = "중복되지 않게 {0}~{1} 사이의 {2}개의 숫자를 입력하세요."; //필수 아님그냥 연습해본거...
+		String formatStr = MessageFormat.format(str, min, max, count);
+		System.out.println(formatStr);
+		System.out.println("입력 : ");
+		user.clear();
+
+		while (user.size() < count) {
+			try {
+				int num = scan.nextInt();
+				// 범위 넘어가면 예외 발
+				if (num < min || num > max) {
+					throw new ArithmeticException();
+				}
+				// 중복된 숫자면 예외 발
+				if (user.contains(num)) {
+					throw new ArithmeticException();
+				}
+				user.add(num);
+
+			} catch (ArithmeticException e) {
+				System.out.println("중복되거나 범위를 벗어났습니다. 다시 입력하세요.");
+				if (scan.hasNextInt()) {
+					scan.nextLine(); // 버려주는 역할...?
+				}
+
+			} catch (Exception e) {
+				// 숫자가 아닌 문자를 입력했을 때, 범위가 아닌 숫자를 입력했을 떄,중복될 
+				System.out.println("입력이 잘못 되었습니다. 다시 입력하세요.");
+				scan.nextLine();
+			}
+		}
+	}
+
+		public boolean printResult() {
+			int strike = 0;
+			for (int i = 0; i < com.size(); i++) {
+				if (com.get(i).equals(user.get(i))) {
+					strike++;
+				}
+			}
+			int ball = 0;
+			for (Integer tmp : com) {
+				if (user.contains(tmp)) {
+					ball++;
+				}
+
+			}
+			ball = ball - strike;
+
+			if (strike != 0) {
+				System.out.println(strike + "S");
+			}
+			if (ball != 0) {
+				System.out.println(ball + "B");
+
+			}
+			if (strike == 0 && ball == 0) {
+				System.out.println("0");
+			}
+			System.out.println();
+			if(strike == 3) {
+				return true;
+			}
+			return false;
+	
+	}
+	public void record (int count, int max) {
+		records.add(count);
+		records.sort(new Comparator<Integer>() {
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				return o1 - o2;
+			}
+
+		});
+		if (records.size() > max) {
+			records.remove(max);
+		}
+	}
+	public void printRecord() {
+		if(records.size() == 0) {
+			System.out.println("기록이 없습니다. 도전하세요.");
+			return;
+		}
+		for(int i = 0; i < records.size(); i++) {
+			System.out.println(i+1+". " + records.get(i) + "회");
+		}
+		
+	}
 }
