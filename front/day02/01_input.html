@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input Tag</title>
+</head>
+<body>
+    <form> <!-- 실제 data를 보낼때 쓰는 것 -->
+        <input type="text" name="id" placeholder="아이디를 입력하세요" required> <br> <!-- 아이디 입력, 검색창, 회원가입 입력칸 1줄짜리. -->
+        <!--required 항목은 필수항목, 입력이 안되면 알림을 띄움. -->
+        <!-- 서버로 데이터를 전송하려면 반드시 name이 필요하다. -->
+        <!-- placeholder은, 안내문구처럼 값을 입력할 경우 사라진다.-->
+        <!-- value는 초기값을 설정하기 때문에, 직접 지워줘야 한다. data 전송시, value가 전송됨. -->
+        <input type="password" name="pw"> <br> <!-- 비밀번호 입력할때 가장 자주 사용. blcok되어서 정보가 노출이 되지 않음 **** 형태로. -->
+        전화번호 : <input type="text" name="p1" value="010" readonly> - <input type="text" name="p2" disabled> - <input type="text" name="p3"> <br>
+        <!-- readonly는 서버로 전송이 가능하다. 읽기전용이다. 값 수정 불가능하다 , disabled는 서버로 전송이 불가능하다. -->	
+        <input type="button" value="버튼" tabindex="1"> <br>
+        <!-- tabindex 탭키 누를 경우 순서 지정 -->
+        <input type="reset" value="리셋" tabindex="2"> <br> <!-- form tag안에 있는 코드까지만 영향을 미친다. -->
+        <input type="submit" value="전송"> <br>
+    </form>
+    <input type="text" name="pw2" value="아이디를 입력하세요"> <br>
+    <form>
+        당신의 취미를 선택하세요. (여러개 가능) <br>
+        <input type="checkbox" name="hobby" value="music"> 음악감상 <br>
+        <input type="checkbox" name="hobby" value="movie"> 영화감상 <br>
+        <input type="checkbox" name="hobby" value="book"> 독서 <br>
+        <input type="checkbox" name="hobby"> 운동 <br>
+        <!-- checkbox는 여러개 선택시 사용하는 속성 -->
+        <!-- http://127.0.0.1:5500/day02/01_input.html?hobby=music&hobby=movie&hobby=book&hobby=on -->
+        <!-- data전송시, value의 값이 전송이 된다. 그리고 name을 같이 hobby로 지정했으므로 배열로 전송된다.-->
+        <!-- 운동은 value를 지정하지 않아서, on으로 전송이 된다. 따라서 checkbox는 꼭 value를 지정해야 한다. -->
+        <input type="submit" value="확인">
+        
+    </form>
+    <form>
+        성별을 선택하세요. <br>
+        <input type="radio" name="gender" value="male"> 남성 <br>
+        <input type="radio" name="gender" value="female"> 여성 <br>
+        <!-- radio는 다중선택이 안된다. value 필수 지정, 여러개 중 하나를 선택해야 할 때 사용한다.-->
+    </form>
+    <input type="file" name="file" accept="audio/*,image/*,.pdf">
+    <!-- accept로 파일의 확장자를 제한한다. -->
+    <form>
+        <input type="color" name="color">
+        <input type="submit" value="색상전송">
+        <!-- 색상정보 선택 -->
+    </form>
+    <input type="month" > <br>
+    <input type="week"> <br>
+    <input type="date"> <br>
+    <input type="datetime-local"> <br>
+    <input type="time"> <br>
+    <form>
+    <input type="email" name="email">
+    <input type="url" name="url">
+    <input type="submit" value="email 전송">
+
+    </form>
+    <input type="image" src="https://thumbs.dreamstime.com/b/cutie-pie-heart-shaped-lettering-design-pink-53489116.jpg">
+    <input type="number"> <br>
+    <input type="range" min="1" max="10">5
+    <!-- min max속성을 이용하여 범위의 단계를 조절 가능하다.-->
+</body>
+</html>

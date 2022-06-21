@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>select tag</title>
+</head>
+<body>
+		<form>
+			살고 있는 도시를 선택하세요.
+			<select name="city" id="">
+				<option >청주</option>
+				<option value="su" selected>서울</option>
+				<!--selected를 추가하면, 기본값으로(초기에 보여지는 값으로) 서울이 지정된다.-->
+				<option value="제주">제주</option>
+				<!--select는 option과 같이 사용되어야 하고, option태그에 value가 없으면, option태그 사이 문자열이 자동으로 value로 지정됨-->
+			</select>
+			<input type="submit" value="전송">
+		</form>
+</body>
+</html>

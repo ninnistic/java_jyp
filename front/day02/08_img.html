@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>img</title>
+</head>
+<body>
+	<!-- src속성 : 이미지가 있는 경로 및 파일 -->
+	<!-- 상대경로와 절대경로가 있음 -->
+	<!-- alt속성 : 이미지 로딩 실패시 보여줄 문자열, 생략하면 유효성 검사에 실패-->
+  <!-- width와 height속성 -->
+  <!-- 크기조절 가능, 숫자만 쓰면 px로 인식, auto 비율에 맞게 자동 조정-->
+
+	<!-- 절대경로를 이용하여 이미지 불러오기-->
+	<img src="/img/doggie.jpg" alt="강아지" width="auto" height="100">
+	
+	<!-- 상대경로를 이용하여 이미지 불러오기-->
+	<img src="../img/doggie.jpg" alt="강아지" width="auto" height="100%">
+	<input type="image" src="../img/doggie.jpg" alt="고양이" width="auto" height="100%">
+	<!-- input태그는 이미지에 커서 올리면 손모양으로 바뀜 -->
+
+</body>
+</html>
