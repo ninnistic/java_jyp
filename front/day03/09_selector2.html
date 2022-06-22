@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Selector</title>
+	<style>
+		/* div태그의 자식태그들 중에서 b태그를 선택*/
+		div>b{
+			color: purple;
+		}
+		/* 그러나 div의 자식요소에는 b태그가 없어서 적용이 안된다. */
+		/* div태그의 자손요소에서 b태그 선택 */
+		div b{
+			color: red;
+		}
+		/* b태그는 자손요소이기 때문에 적용이 된다.*/
+		div.name{
+			color: blue;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- 
+		div 태그의 자식 요소 : <p>
+		div 태그의 자손 요소 : <b>, <p>
+		p 태그의 부모 요소 : <div>
+		p 태그의 조상 요소 : <html>, <body>, <div>
+		b 태그의 부모 요소 : <p>
+		b 태그의 조상 요소 : <html>, <body>, <div>, <p>
+	-->
+	
+	
+	<div class="name">
+		인사말
+	<p>
+		안녕하세요. 제 이름은 <b>홍길동</b> 입니다.
+		만나서 반갑습니다. 
+	</p>
+	</div>
+
+	<a href="#">홈으로</a>
+	
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>form</title>
+</head>
+<body>
+		<form action="../day02/01_input.html" method="get" >
+			<input type="text" name="id">
+			<button type="submit">지정 URL로 get전송</button>
+		</form>
+		<form method="get" > <!--Action 생략-->
+			<input type="text" name="id">
+			<button type="submit">현재 URL로 get전송</button>
+		</form>
+		<form method="post" >
+			<input type="text" name="id">
+			<button type="submit">현재 URL로 post 전송</button>
+			<!-- Error -->
+			<!-- post는 회원가입이나, 글쓰기, 큰 데이터 전송에 사용 -->
+		</form>
+</body>
+</html>

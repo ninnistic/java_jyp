@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Selector</title>
+	<style>
+		/* Selector 우선순위 */
+		/* 아이디 > 클래스 > 태그 /// 태그 1점, 클래스 10점, 아이디 100점 */
+		/* 점수가 같은 경우에는, 순서가 중요하다. btn2가 더 우선이된다. */
+		/* 전체 선택자, 모든 요소에 적용 : color red; */
+		p { 
+			color: red;
+		}
+		#name{
+			color : blue;
+		}
+		/* id는 중복될 수 없다 */
+		.btn {
+			color : green;
+		}
+		.btn2 {
+			color : yellow;
+		}
+		input[type=text] {
+			color : red;
+		}
+		#name:hover{
+			color: red;
+		}
+		/*가상 class  hover*/
+		/* class는 중복이 가능하다. 그래서 모든 같은 class요소에 적용이된다. */
+	</style>
+</head>
+<body>
+	<p>안녕하세요</p>
+	<div id="name"> 홍길동 </div>
+	<button class="btn"> 버튼 </button> <!-- class자체에 역할은 없다. -->
+	<button class="btn"> 버튼 </button> 
+	<p class="btn btn2"> 안녕하세요 </p>
+	<input type="text"> <br>
+	<input type="password"> <br>
+</body>
+</html>

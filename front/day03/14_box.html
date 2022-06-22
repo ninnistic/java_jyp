@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Box</title>
+	<style>
+		.box1{
+			box-sizing: content-box; color: white;
+			width: 100px; height: 100px; background-color : red;
+			padding: 10px 5px 20px 30px;
+			border-width: 5px;
+			border-color: green;
+			border-style: double;
+		}
+		/* content box는 border를 포함하지 않는다. */
+
+		.box2{
+			box-sizing: border-box; color: white;
+			width: 100px; height: 100px; background-color : blue;
+			padding: 10px 5px 20px 30px;
+			border: 5px dotted pink;
+		}
+		/* box2는 border를 포함한 사이즈 이기때문에, 순수 파란색 사이즈는 90x90 이다 border가 10px을 차지함.*/
+
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+</body>
+</html>
