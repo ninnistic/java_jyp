@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>☕️ = 지영</title>
+        <meta charset="utf-8">
+        <meta name="author" content="제이콥">
+        <style>
+            @keyframes myAnimation {
+                from { transform: rotate(0deg)    scale(1)  }
+                50%  { transform: rotate(180deg)  scale(1.5) }
+                to   { transform: rotate(360deg)  scale(1) }
+            }
+            body {
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: aliceblue;
+            }
+            .자바 {
+                font-size: 200px;
+                animation: myAnimation 3s linear;
+                animation-iteration-count: infinite;
+                filter: drop-shadow(0 0 20px rgba(0,0,0,0.25));
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="자바" onclick="alert('지영씨는자바좋입니다!')">☕️</h1>
+    </body>
+</html>
