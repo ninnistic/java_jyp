@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>박스 안에 박스 넣기</title>
+	<style>
+		.box {
+			background-color: blue;
+			height: 300px; width : 500px;
+			margin-bottom: 10px;
+			float : left;
+		}
+		.box1{ position: relative;}
+		.box1>.inner-box{
+			/*width : 480px; height : 280px;*/
+
+			background-color: yellow;
+			position : absolute;
+			/*absolute는 조상 요소중에 position이 relative인 요소가 있으면 
+			그것을 기준으로, 없으면 브라우저 화면을 기준으로 잡는다 */
+			/* top bottom을 이용하여 높이 대체 가능 */
+			/* left, right를 이용하여 너비 대체 가능 */
+			top : 10px; left : 10px;
+			bottom : 10px; right: 10px; 
+			/* top,left,bottom,right을 지정해주면 box를 생성해준다.*/
+		}
+		.box2{ padding : 10px; box-sizing : border-box;}
+		.box2>.inner-box{
+			/* width, height의 %는 부모요소 컨텐츠 크기의
+			가로 세로 퍼센트다. 
+			500중에 양쪽 10을 빼면 480이 부모의 100%가 된다. 
+			*/
+			width : 100%; height : 100%;
+			background-color: yellow;
+
+		}
+		.box3>.inner-box {
+			width : clac(100%  20px); height : calc(100% - 20px);
+			background-color: yellow;
+			margin : 10px;
+		}
+	</style>
+</head>
+<body>
+	<!-- body tag 기본 여백 2px 2px-->
+	<!-- 자식 요소에 position : absolute를 적용 -->
+	<div class="box box1">
+	<div class="inner-box"></div>
+</div>
+<!-- 부모 요소에 padding을 적용 (추천!)-->
+<div class="box box2">
+	<div class="inner-box"></div>
+</div>
+<!-- 자식 요소에 margin을 적용-->
+<div class="box box3">
+	<div class="inner-box"></div>
+</div>
+</body>
+</html>
