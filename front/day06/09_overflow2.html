@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.box{
+			width: 300px;	height: 50px; line-height: 50px;
+			white-space : nowrap; overflow: hidden;
+			text-overflow: ellipsis;
+			border : 1px solid black;
+			margin-bottom : 10px;
+		}
+		/* 크롬에서 말줄임 */
+		.box2{
+			width: 300px;	height: 150px; line-height: 50px;
+			display: -webkit-box; word-wrap : break-word;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp : 3;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			border : 1px solid black;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="box">26일 부산 동부경찰서에 따르면 이날 오전 2시쯤 부산 동구 좌천동 5부두 인근 도로에서 A씨가 택시기사 B씨를 폭행하고 택시를 뺏어 달아났다. 폭행을 당한 택시기사 B씨는 중상을 입고 인근 병원에서 치료를 받고 있다.</div>
+	<div class="box2">26일 부산 동부경찰서에 따르면 이날 오전 2시쯤 부산 동구 좌천동 5부두 인근 도로에서 A씨가 택시기사 B씨를 폭행하고 택시를 뺏어 달아났다. 폭행을 당한 택시기사 B씨는 중상을 입고 인근 병원에서 치료를 받고 있다.</div>
+</body>
+</html>
