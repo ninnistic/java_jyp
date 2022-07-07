@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{padding : 0; margin : 0;}
+		.container1{
+			margin: 100px; padding: 30px;
+			border : 3px solid red;
+			float : left;
+		}
+		.box1{
+			float: left;
+			line-height: 20px;
+			font-size: 14px;
+			background-color: yellow;
+		}
+		.box1+.box1{
+			margin-left: 30px;
+		}
+
+		.container2{
+			float: left; 
+			margin: 100px;
+			border : 3px solid red;
+		}
+		.box2{
+			float: left; 
+			margin : 30px;
+			background-color: yellow;
+			line-height: 20px;
+			font-size: 14px;
+		}
+		.box-left{
+			margin-left: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container1">
+		<div class="box1">안녕하세요</div>
+		<div class="box1">감사해요</div>
+		<div class="box1">잘있어요</div>
+	</div>
+	<div class="container2">
+		<div class="box2 ">또 행복해</div>
+		<div class="box2 box-left">가지마</div>
+		<div class="box2 box-left">잘가</div>
+	</div>
+</body>
+</html>
