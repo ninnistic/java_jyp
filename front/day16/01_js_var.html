@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS변수선언</title>
+	<script>
+		// script를 head태그에 쓰면 body태그에 있는 태그들이 배치되기 전에 실행 
+		console.log(1)
+	</script>
+</head>
+<body>
+	<script>
+		// script를 boyd태그 하단에 쓰면 body태그에 있는 태그들이 배치된 후에 실행 
+		console.log(2)
+		// js에서는 ;이 필수가 아님
+		// 변수를 선언하려면 var / let 을 이용해서 선언.
+		// var는 호이스팅 가능. 중복선언 가능. -> 코드를 실행하기 전에 변수와 함수선언이 scope의 최 상단으로 끌어 올려진다. 
+		// let은 호이스팅 불가능. 중복선언 불가능.
+		x = 10
+		var x 
+		console.log(x)
+		var y 
+		console.log(y)
+
+		//let 
+		let z;
+		z = 10;
+		console.log(z);
+		var x = 40;
+
+		// typeof : 변수의 타입을 확인하는 연산자 
+		var a = 10;
+		console.log(a+' 의 타입 : '+ typeof a);
+
+		var b = 'abc';
+		console.log(b+' 의 타입 : '+ typeof b);
+
+		var c = true;
+		console.log(c+' 의 타입 : '+ typeof c);
+
+		var d = Symbol('def');
+		console.log("Symbol('def')"+' 의 타입 : '+typeof d);
+	
+		var e = {test : 123};
+		console.log(e+' 의 타입 : ' + typeof e);
+
+		var f;
+		console.log(f+ '의 타입 : ' + typeof f);
+
+		var g = [1,2];
+		console.log(g+ '의 타입 : ' + typeof g);
+
+		var h = null;
+		console.log(h+ '의 타입 : ' + typeof h);
+		
+		var i = new Array(1,2,3);
+		console.log(i+ '의 타입 : ' + typeof i);
+
+		// null은 객체타입, 값 X
+		// undefined은 타입 X 
+		// JS 에서는 ==는 값이 같음, ===는 값이 같고 타입도 같다. 
+		console.log("1 == '1' : " + (1 == '1'));
+		//true
+		console.log("1 === '1' : " + (1 === '1'));
+		//false
+	</script>
+</body>
+</html>

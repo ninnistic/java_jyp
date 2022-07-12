@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 배열명.reverse() : 배열의 원소의 값이 반대로 교체 
+
+		let arr1 = [1,12,3,34];
+		console.log(arr1);
+		arr1.reverse();
+		console.log(arr1);
+
+		// 배열명.sort() : 요소들을 문자열로 보고 알파벳순으로 정렬
+		// 배열명.sort(함수) : 함수를 기준으로 정렬
+		console.log(arr1)
+		arr1.sort();
+		console.log(arr1);
+		arr1.sort((a,b) => a-b);
+		console.log(arr1);
+		
+		// 배열명.splice(시작번지, 개수) : 시작번지부터 개수만큼 제거, 개수가 생략되면 끝까지 제거
+		// 배열명.splice(시작번지, 개수, 추가할 값들); 
+
+
+		// push, pop 마지막 추가 삭제
+		// unshift, shift 처음 추가 삭제
+		// splice 중간 추가 삭제 
+
+
+		//arr1.splice(2); // 2번지부터 끝까지 제거
+		//arr1.splice(2,1) // 2번지부터 1개 제거
+		arr1.splice(2,0,true,false);
+		console.log(arr1);
+	</script>
+</body>
+</html>

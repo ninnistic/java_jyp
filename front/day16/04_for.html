@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// in JS, Array is more like List + Java's Array
+		// Difference to Java : 
+		// Java's Array requires only same types 
+		// JS's Array is allowed to have different types as well
+		var arr = [1 ,'2', [4,5,6], {name : '홍길동'}]; // empty array 
+		console.log(arr);
+
+		/* for ( 변수명 in 배열명 / 객체 ) {
+		  변수명 : 배열명의 번지 , 객체 속성 이름 
+		}
+		// for of : 자바의 for 문과 유사
+		for ( 변수명 of 배열명 / 객체) {
+			변수명 : 배열값 객체값 
+		}
+		*/
+		for ( index in arr) {
+			console.log (index + '번지');
+		}
+		for (value of arr) {
+			console.log(value);
+		}
+
+		var student = { name : '홍길동' , age : 21, address : '청주시' };
+		for( index in student ){
+			console.log(index + ' : ' + student[index]);
+		}
+	</script>
+</body>
+</html>
