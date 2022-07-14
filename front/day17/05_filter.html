@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// 배열명.filter(함수) : 함수의 return 값이 true인 요소들로 새로운 배열로 만들어 반환 
+	// 함수에 return이 필요하고, return값 = boolean 
+
+	// 주어진 배열 값이 짝수인 요소들만 합하는 코드 작성
+
+	let arr = [1,2,3,4,10,20,5];
+	let sum = 0;
+	let even = arr.filter(function(v){
+		return v % 2 == 0;
+	});
+	even.forEach(function(v){
+		sum += v;
+	})
+	console.log('배열에서의 짝수의 합 : ' + sum);
+</script>
+</body>
+</html>
